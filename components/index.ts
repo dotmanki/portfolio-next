@@ -1,0 +1,8 @@
+export { default as Button } from './Button'
+export * from './Hero'
+export { default as Main } from './Main/Main'
+export { default as Section } from './Main/Section'
+export { default as Modal } from './Modal/Modal'
+export { default as Navbar } from './Nav/Navbar'
+export { default as Portfolio } from './Sections/Portfolio'
+export { default as Skills } from './Sections/Skills'

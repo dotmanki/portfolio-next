@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 318 318"
+   width="2500"
+   height="2500"
+   version="1.1"
+   id="svg389"
+   sodipodi:docname="styled-components.svg"
+   inkscape:export-filename="styled-components.svg"
+   inkscape:export-xdpi="30.719999"
+   inkscape:export-ydpi="30.719999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview391"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <defs
+     id="defs377" />
+  <g
+     fill="none"
+     fill-rule="evenodd"
+     id="g387">
+    <path
+       d="m 84.447642,139.04428 -36.2,22.5 36.2,22.9 -3.7,4.6 -37.7,-23.6 v -7.9 l 38.1,-23.6 m 189.299998,22.7 v 7.8 l -37.7,23.6 -3.7,-4.9 36.1,-22.6 -36.1,-22.7 3.2,-4.9"
+       fill="#4a4a4a"
+       id="path381"
+       sodipodi:nodetypes="cccccccccccccc" />
+    <text
+       fill="#000000"
+       font-family="AppleColorEmoji, 'Apple Color Emoji'"
+       font-size="100px"
+       letter-spacing="0.5"
+       id="text385"
+       x="42.647644"
+       y="95.844284"><tspan
+         x="112.64764"
+         y="195.84428"
+         id="tspan383">💅</tspan></text>
+  </g>
+</svg>

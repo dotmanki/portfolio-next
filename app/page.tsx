@@ -1,91 +1,84 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+'use client'
 
-const inter = Inter({ subsets: ['latin'] })
+import Display from '@/components/Hero/Display'
+import Header from '@/components/Hero/Header'
+import Hero from '@/components/Hero/Hero'
+import Section from '@/components/Main/Section'
+import Modal from '@/components/Modal/Modal'
+import Navbar from '@/components/Nav/Navbar'
+import Contact from '@/components/Sections/Contact'
+import Portfolio from '@/components/Sections/Portfolio'
+import Skills from '@/components/Sections/Skills'
+import {
+  GlobalStyle,
+  colorPalette,
+  blurAnimation,
+  breakpoints,
+  transitionCard,
+} from '@/styles/globalStyles'
+import { projects } from '@/utils/projects'
+import { Inter } from 'next/font/google'
+import { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
 
 export default function Home() {
+  const [modalActive, setModalActive] = useState(false)
+  const [currentProject, setCurrentProject] = useState(projects[0])
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <ThemeProvider
+      theme={{
+        colors: colorPalette,
+        animations: { blur: blurAnimation },
+        breakpoints,
+        transition: { card: transitionCard },
+      }}
+    >
+      <GlobalStyle />
+      <Navbar>
+        <li>
+          <a href='#home'>Inicio</a>
+        </li>
+        <li>
+          <a href='#skills'>Habilidades</a>
+        </li>
+        <li>
+          <a href='#portfolio'>Portfolio</a>
+        </li>
+        <li>
+          <a href='#contact'>Contacto</a>
+        </li>
+      </Navbar>
+      <Header>
+        <Display
+          title='Damian Orzusa'
+          subtitle='Desarrollador Web Frontend'
+          description='Soy un programador web con suma creatividad y profesionalidad,
+          aplicando buenas practicas en cada proyecto realizado.'
         />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+        <Hero />
+      </Header>
+      <main>
+        <Section title='Habilidades'>
+          <Skills />
+        </Section>
+        <Section title='Portfolio'>
+          <Portfolio
+            setModalActive={setModalActive}
+            setCurrentProject={setCurrentProject}
+          />
+        </Section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <Section title='Contacto'>
+          <Contact></Contact>
+        </Section>
+      </main>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Modal
+        setModalActive={setModalActive}
+        modalActive={modalActive}
+        project={currentProject}
+      />
+    </ThemeProvider>
   )
 }
