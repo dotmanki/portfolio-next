@@ -7,7 +7,7 @@ interface Props {
 const Ul = styled.ul`
   display: flex;
   justify-content: center;
-  gap: 2em;
+  gap: 1rem;
   padding: 0;
 
   & li {
@@ -29,7 +29,7 @@ const Ul = styled.ul`
 `
 
 const Nav = styled.nav`
-  width: 100%;
+  max-width: 100vw;
   margin-bottom: 1rem;
 `
 

@@ -51,7 +51,6 @@ const StyledPortfolio = styled.section`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: row;
-    flex-wrap: nowrap;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -60,7 +59,7 @@ const StyledPortfolio = styled.section`
 `
 
 const Card = styled.article`
-  width: 100%;
+  width: 32rem;
   height: 13rem;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.onPrimary};
